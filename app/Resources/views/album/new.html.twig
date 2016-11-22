@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Album creation</h1>
+
+<div class="container well">
+    {{ form_start(form) }}
+    <div class="groupequipformulaire">
+        <div class="row">
+            <div class="form-group">
+                {{ form_label(form.titreAlbum, "Titre de l'album", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                <div class="col-sm-8">
+                    {{ form_widget(form.titreAlbum, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                {{ form_label(form.artiste, "Artiste", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                <div class="col-sm-8">
+                    {{ form_widget(form.artiste, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                {{ form_label(form.genre, "Genre", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                <div class="col-sm-8">
+                    {{ form_widget(form.genre, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                {{ form_label(form.support, "Support", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                <div class="col-sm-8">
+                    {{ form_widget(form.support, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-offset-3">
+                <div class="groupequipformulaire boutonEdit  ">
+                    <button type="submit" class="btn btn-success btn-lg btnForm">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+
+    <ul>
+        <li>
+            <a href="{{ path('album_index') }}">Back to the list</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

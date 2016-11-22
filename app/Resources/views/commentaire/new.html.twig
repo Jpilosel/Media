@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>édition des commentaires</h1>
+
+<div class="container well">
+    {{ form_start(form) }}
+    <div class="groupequipformulaire">
+        <div class="row">
+            <div class="form-group">
+                {{ form_label(form.utilisateur, "Utilisateur", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                <div class="col-sm-8">
+                    {{ form_widget(form.utilisateur, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                {{ form_label(form.commentaire, "commentaire", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                <div class="col-sm-8">
+                    {{ form_widget(form.commentaire, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                {{ form_label(form.album, "Album", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                <div class="col-sm-8">
+                    {{ form_widget(form.album, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-offset-3">
+                <div class="groupequipformulaire boutonEdit  ">
+                    <button type="submit" class="btn btn-success btn-lg btnForm">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+    <ul>
+        <li>
+            <a href="{{ path('commentaire_index') }}">Back to the list</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
